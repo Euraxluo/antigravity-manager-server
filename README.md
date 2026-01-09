@@ -7,6 +7,20 @@
 > ```bash
 > docker pull euraxluo/antigravity-manager:latest
 > ```
+> 
+> **安全访问控制**：镜像内置了 Nginx 反向代理，支持通过自定义 HTTP Header 进行访问控制。
+> 启动时请设置以下环境变量：
+> - `AUTH_HEADER_NAME`: 自定义 Header 名称 (例如 `X-Auth-Key`)。
+> - `AUTH_HEADER_VALUE`: 只有请求包含此 Header 且值匹配时才允许访问。
+> 
+> 示例启动命令：
+> ```bash
+> docker run -d --name antigravity \
+>   -p 3000:3000 \
+>   -e AUTH_HEADER_NAME=X-My-Auth \
+>   -e AUTH_HEADER_VALUE=mysecret_value \
+>   euraxluo/antigravity-manager:latest
+> ```
 
 ## 文件说明
 - `antigravity-native.tar.gz`: 核心程序包（包含二进制文件和前端静态资源）。
