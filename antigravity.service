@@ -1,0 +1,17 @@
+[Unit]
+Description=Antigravity Manager
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/antigravity
+ExecStart=/opt/antigravity/server
+Restart=always
+Environment="ANTIGRAVITY_DATA_DIR=/opt/antigravity/data"
+Environment="PROXY_AUTO_START=true"
+Environment="ALLOW_LAN_ACCESS=true"
+Environment="RUST_LOG=info"
+
+[Install]
+WantedBy=multi-user.target
