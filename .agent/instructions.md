@@ -17,9 +17,8 @@
 2. 运行 `./extract.sh antigravity-manager.tar.gz`。
 3. 脚本会自动更新 `Native-Deployment` 文件夹中的内容。
 
-### 2. 部署与维护
+### 2. 部署注意事项
 - **硬编码路径修复**：程序内部硬编码了 `/app/static`。在任何新环境中部署，必须执行 `sudo ln -s /opt/antigravity /app`。
-- **服务重启**：在非 systemd 环境（如 Docker 容器内）下，使用 `./restart.sh` 安全重启服务，它会处理进程查找、停止和后台重新启动。
 - **依赖项**：确保系统安装了 `libssl3` 和 `ca-certificates`。
 - **环境变量**：
     - `ANTIGRAVITY_DATA_DIR`: 指向数据目录。
