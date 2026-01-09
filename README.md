@@ -26,6 +26,23 @@
    sudo ln -s /opt/antigravity /app
    ```
 
+## 🐳 Nginx Docker 环境快速启动
+
+如果您在 Nginx Docker 镜像（或其他 Debian 系镜像）中运行，可以使用一键脚本：
+
+1. **Clone 仓库**:
+   ```bash
+   git clone git@github.com:Euraxluo/antigravity-manager-server.git
+   cd antigravity-manager-server
+   ```
+
+2. **运行安装脚本**:
+   ```bash
+   chmod +x setup_nginx.sh
+   ./setup_nginx.sh
+   ```
+   该脚本会自动安装 `libssl3`、解压程序、创建 `/app` 软链接并启动服务。
+
 4. **配置 Systemd**:
    - 将 `antigravity.service` 上传到 `/etc/systemd/system/`。
    - 运行以下命令启动服务：
