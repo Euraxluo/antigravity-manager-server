@@ -49,6 +49,13 @@
    ```
    该脚本会自动安装 `libssl3`、解压程序、创建 `/app` 软链接并启动服务。
 
+3. **重启服务 (不重启容器)**:
+   如果您修改了配置需要重启服务，运行：
+   ```bash
+   chmod +x restart.sh
+   ./restart.sh
+   ```
+
 4. **配置 Systemd**:
    - 将 `antigravity.service` 上传到 `/etc/systemd/system/`。
    - 运行以下命令启动服务：
