@@ -2,6 +2,12 @@
 
 这个文件夹包含了将 Antigravity Manager 部署到不支持 Docker 的 VPS 所需的所有核心文件。
 
+> [!IMPORTANT]
+> **官方 Docker 镜像**：如果您可以使用 Docker，请直接拉取：
+> ```bash
+> docker pull euraxluo/antigravity-manager:latest
+> ```
+
 ## 文件说明
 - `antigravity-native.tar.gz`: 核心程序包（包含二进制文件和前端静态资源）。
 - `antigravity.service`: Systemd 服务配置文件。
